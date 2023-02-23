@@ -10,7 +10,7 @@ function start(){
         {
           type: "list",//could be list of types of employees
           name: "employeeType",
-          message: "What is your role?",
+          message: "What is your ?",
           choices: ['Manager', 'Engineer', 'Intern', 'Quit'] 
         },
     ]).then(function(answer){
