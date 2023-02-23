@@ -10,7 +10,7 @@ function start(){
         {
           type: "list",//could be list of types of employees
           name: "employeeType",
-          message: "What is your name?",
+          message: "What is your role?",
           choices: ['Manager', 'Engineer', 'Intern', 'Quit'] 
         },
     ]).then(function(answer){
@@ -36,6 +36,24 @@ function addManager(){
     ]).then(function (managerData){
         console.log(managerData)
         const newManager = new Manager(
+            managerData.name
+        )
+        console.log(newManager)
+        team.push(newManager)
+        start()
+    })
+}
+
+function addEngineer(){
+    inquirer.prompt([
+        {
+          type: "input",//could be list of types of employees
+          name: "name",
+          message: "What is your name?",
+        },
+    ]).then(function (managerData){
+        console.log(managerData)
+        const newEngineer = new Engineer(
             managerData.name
         )
         console.log(newManager)
