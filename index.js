@@ -32,6 +32,12 @@ function start(){
             message: "What is your office number?",
             choices: ['1', '2', '3', '4', '5', 'Quit'] 
           },
+          {
+            type: "list",
+            name: "Employee type",
+            message: "Which type of employee would you like to add?",
+            choices: ['Engineer', 'Intern', 'Finish Building Team'] 
+          },
     ]).then(function(answer){
         if(answer.employeeType === "Manager"){
             addManager();
@@ -68,8 +74,24 @@ function addEngineer(){
         {
           type: "input",//could be list of types of employees
           name: "name",
-          message: "What is your name?",
+          message: "What is the new Engineer's name?",
         },
+        {
+          type: "input",
+          name: "New Engineer Employee ID",
+          message: "What will the new Engineer's employee ID be?",
+        },
+        {
+          type: "input",
+          name: "New Engineer Email",
+          message: "What will the new Engineer's email address be?",
+        },
+        {
+          type: "input",
+          name: "New Engineer GitHub",
+          message: "What is the new Engineer's GitHub username?",
+        },
+        
     ]).then(function (engineerData){
         console.log(engineerData)
         const newEngineer = new Engineer(
@@ -82,9 +104,9 @@ function addEngineer(){
 }
 
 function writeToFile(answers) { 
-    const generateTeamProfile = generateTeamProfile()//calls function passing answers object as argument
+    const generateTeamProfile = generateTeamProfile(answers)
   
-    fs.writeFile('./dist/index.html', createIndexHTML //writes output to README file in readme_output directory
+    fs.writeFile('./dist/index.html', createIndexHTML 
     ,(error) => { //handles errors
       if (error) throw new Error("Something went wrong", error)
     }
