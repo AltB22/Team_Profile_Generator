@@ -8,11 +8,17 @@ const team =  [];
 function start(){
     inquirer.prompt([
         {
-          type: "list",//could be list of types of employees
+          type: "input",//could be list of types of employees
           name: "employeeType",
-          message: "What is your name?",
-          choices: ['Manager', 'Engineer', 'Intern', 'Quit'] 
+          message: "What is the team Manager's name?",
+        //   choices: ['William', 'Brian', 'James', 'Marcia'] 
         },
+        {
+            type: "list",
+            name: "employeeID",
+            message: "What is your employee ID?",
+            choices: ['12345', '56789', 'James', 'Marcia'] 
+          },
     ]).then(function(answer){
         if(answer.employeeType === "Manager"){
             addManager();
