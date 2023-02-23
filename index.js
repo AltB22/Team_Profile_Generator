@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');//const to require installation of inquirer
 const fs = require('fs');//indicating interaction with the file system
-const generateTeamProfile = require('./utils/generateTeamProfile');
+const generateTeamProfile = require('./src/generateTeamProfile');
 const Manager = require('./lib/Manager');
 
 const team =  [];
@@ -10,7 +10,7 @@ function start(){
         {
           type: "list",//could be list of types of employees
           name: "employeeType",
-          message: "What is your ?",
+          message: "What is your name?",
           choices: ['Manager', 'Engineer', 'Intern', 'Quit'] 
         },
     ]).then(function(answer){
