@@ -1,9 +1,27 @@
 {
-  "dependencies": {
-    "inquirer": "^8.2.4"
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
   },
   "scripts": {
-    "test": "jest --verbose test/*"
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AltB22/Team_Profile_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AltB22/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/AltB22/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
   },
   "devDependencies": {
     "jest": "^29.4.3"

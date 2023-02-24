@@ -1,14 +1,18 @@
 const Employee = require('../lib/Employee');
 
-test('creates a new employee object', () => {
-    const employee = new Employee();
+describe('testing employing class', () => {
+    const employee = new Employee('a', 'b', 'c');
 
-    expect(typeof(employee)).toBe('object');
+    test('does the name pass into the new obj', ()=>{
+        expect(employee.name).toBe('a')
+        expect(employee.getName).toBe('a')
+    })
+    test('does the id pass into the new obj', ()=>{
+        expect(employee.id).toBe('b')
+    })
+
+    
 });
 
-test('gets employee name', () => {
-    const employee = new Employee('Employee1');
 
-    expect(employee.getName()).toBe('Employee1');
-});
 
