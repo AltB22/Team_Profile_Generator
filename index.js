@@ -49,6 +49,12 @@ function start(){
                 break;
                 case "Engineer":
                     addEngineer();
+                    break;
+                case "Intern":
+                    addEngineer();
+                    break;
+                case "Finish Building Team":
+                    writeToFile();
             }
         // if(answer.employeeType === "Manager"){
         //     addManager();
@@ -65,10 +71,25 @@ function start(){
 function addManager(){
     inquirer.prompt([
         {
-          type: "input",//could be list of types of employees
-          name: "name",
-          message: "What is your name?",
-        },
+            type: "input",//could be list of types of employees
+            name: "name",
+            message: "What is the new Manager's name?",
+          },
+          {
+            type: "input",
+            name: "newManagerEmployeeID",
+            message: "What will the new Manager's employee ID be?",
+          },
+          {
+            type: "input",
+            name: "newManagerEmail",
+            message: "What will the new Manager's email address be?",
+          },
+          {
+            type: "input",
+            name: "newManagerGitHub",
+            message: "What is the new Manager's GitHub username?",
+          },
     ]).then (managerData => {
         console.log(managerData)
         const newManager = new Manager(
@@ -108,8 +129,8 @@ function addEngineer(){
         const newEngineer = new Engineer(
             engineerData.name
         )
-        console.log(newManager)
-        team.push(newManager)
+        console.log(newEngineer)
+        team.push(newEngineer)
         start()
     })
 }
