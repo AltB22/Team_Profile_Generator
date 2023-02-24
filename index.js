@@ -3,6 +3,7 @@ const fs = require('fs');//indicating interaction with the file system
 const generateTeamProfile = require('./src/generateTeamProfile');
 const Manager = require('./lib/Manager');
 const Employee = require('./lib/Employee');
+const Engineer = require('./lib/Engineer')
 
 
 const team =  [];
@@ -119,6 +120,8 @@ function writeToFile() { //TODO Create the output directory if the output path d
     }
     fs.writeFileSync(outputPath, render(teamMembers),'utf-8')
 //team members has to hold all the answers
+
+
     // const generateTeamProfile = generateTeamProfile(answers)
   
     // fs.writeFile('./dist/index.html', createIndexHTML 
