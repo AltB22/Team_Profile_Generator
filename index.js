@@ -11,43 +11,53 @@ function start(){
     inquirer.prompt([
         {
           type: "input",//could be list of types of employees
-          name: "employeeType",
+          name: "employeeName",
           message: "What is the team Manager's name?",
         //   choices: ['William', 'Brian', 'James', 'Marcia'] 
         },
         {
             type: "list",
-            name: "employee ID",
+            name: "employeeID",
             message: "What is your employee ID?",
             choices: ['123', '456', '789', 'Quit'] 
-          },
-          {
+        },
+        {
             type: "input",
-            name: "Email Address",
+            name: "emailAddress",
             message: "What is your email address",
-          },
-          {
+        },
+        {
             type: "list",
-            name: "Office Number",
+            name: "officeNumber",
             message: "What is your office number?",
             choices: ['1', '2', '3', '4', '5', 'Quit'] 
-          },
-          {
+        },
+        {
             type: "list",
-            name: "Employee type",
+            name: "employeeType",
             message: "Which type of employee would you like to add?",
-            choices: ['Engineer', 'Intern', 'Finish Building Team'] 
-          },
-    ]).then(function(answer){
-        if(answer.employeeType === "Manager"){
-            addManager();
-        } else if (answer.employeeType === "Engineer"){
-            addEngineer();
-        } else if (answer.employeeType === "Intern"){
-            addIntern();
-        } else {
-            writeToFile()//
-        }
+            choices: ['Manager', 'Engineer', 'Intern', 'Finish Building Team'] 
+        },
+
+        ])
+        .then(answer => {//can try switch / case here
+            // console.log(answer)
+            switch(answer.employeeType){
+                case "Manager": 
+                    addManager();
+                break;
+                case "Engineer":
+                    addEngineer();
+            }
+        // if(answer.employeeType === "Manager"){
+        //     addManager();
+        // } else if (answer.employeeType === "Engineer"){
+        //     addEngineer();
+        // } else if (answer.employeeType === "Intern"){
+        //     addIntern();
+        // } else {
+        //     writeToFile()//
+        // }
     })
 }
 
@@ -58,12 +68,12 @@ function addManager(){
           name: "name",
           message: "What is your name?",
         },
-    ]).then(function (managerData){
+    ]).then (managerData => {
         console.log(managerData)
         const newManager = new Manager(
             managerData.name
         )
-        console.log(newManager)
+        // console.log(newManager)
         team.push(newManager)
         start()
     })
@@ -91,9 +101,9 @@ function addEngineer(){
           name: "New Engineer GitHub",
           message: "What is the new Engineer's GitHub username?",
         },
-        
-    ]).then(function (engineerData){
-        console.log(engineerData)
+
+    ]).then(engineerData => {
+        // console.log(engineerData)
         const newEngineer = new Engineer(
             engineerData.name
         )
@@ -103,14 +113,19 @@ function addEngineer(){
     })
 }
 
-function writeToFile(answers) { 
-    const generateTeamProfile = generateTeamProfile(answers)
-  
-    fs.writeFile('./dist/index.html', createIndexHTML 
-    ,(error) => { //handles errors
-      if (error) throw new Error("Something went wrong", error)
+function writeToFile() { //TODO Create the output directory if the output path doesn't exist
+    if(!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR) 
     }
-    )
+    fs.writeFileSync(outputPath, render(teamMembers),'utf-8')
+//team members has to hold all the answers
+    // const generateTeamProfile = generateTeamProfile(answers)
+  
+    // fs.writeFile('./dist/index.html', createIndexHTML 
+    // ,(error) => { //handles errors
+    //   if (error) throw new Error("Something went wrong", error)
+    // }
+    // )
   }
 
 
