@@ -1,7 +1,7 @@
 //Below generates card for "Manager"
 
 
-function generateTeamCards(team){
+// function generateTeamCards(team){
     
     const generateManager = function (manager) {
         return `
@@ -67,7 +67,7 @@ function generateTeamCards(team){
 
     return html.join('')
     
-}
+// }
 
 module.exports = (teamArray) => {
     return `
