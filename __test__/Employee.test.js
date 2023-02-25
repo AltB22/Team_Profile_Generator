@@ -6,15 +6,18 @@ describe('testing employing class', () => {
     test('does the name pass into the new obj?', ()=>{
         expect(employee.name).toBe('a')
         // expect(employee.getName).toBe('a')
+        // const result = new Employee().getName('a')
+        // expect(result).toBe('a')
+
     })
-    test('does the id pass into the new obj?', ()=>{
+    // test('does the id pass into the new obj?', ()=>{
         expect(employee.id).toBe('b')
-        // expect(employee.getId).toBe('b')
-    })
-    test('does the email pass into the new obj?', ()=>{
+    //     // expect(employee.getId).toBe('b')
+    // })
+    // test('does the email pass into the new obj?', ()=>{
         expect(employee.email).toBe('c')
-        // expect(employee.getEmail).toBe('c')
-    })
+    //     // expect(employee.getEmail).toBe('c')
+    // })
 
     
 });

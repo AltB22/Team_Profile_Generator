@@ -5,7 +5,7 @@ function generateTeamCards(team){
     
     const generateManager = function (manager) {
         return `
-        <div class="TBD"
+        <div class="TBD">
             <div class="card">
                 <div class="card-header">
                     <h3>${manager.name}</h3>
