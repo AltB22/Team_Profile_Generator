@@ -19,23 +19,23 @@ function start(){
         {
             type: "input",
             name: "employeeID",
-            message: "What is your employee ID?",
+            message: "What is the team Manager's employee ID?",
         },
         {
             type: "input",
             name: "emailAddress",
-            message: "What is your email address",
+            message: "What is the team Manager's email address",
         },
         {
             type: "input",
             name: "officeNumber",
-            message: "What is your office number?",
+            message: "What is the team Manager's office number?",
         },      
 
         ])
         .then(answer => {
             const newManager = new Manager(answer.employeeName, answer.employeeId)
-            // console.log(newManager)
+     
             team.push(newManager)
             menu()
     })

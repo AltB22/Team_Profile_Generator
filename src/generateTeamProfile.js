@@ -13,9 +13,27 @@ function generateTeamCards(team){
                 </div>
     
                 <div class="card-body">
-                    <p class="id">ID: ${manager.id}</p>
-                    <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                    <p class="office">Office Number: ${manager.officeNumber}</p>
+                    <p class="employee info"">ID: ${manager.id}</p>
+                    <p class="employee info"">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                    <p class="employee info"">Office Number: ${manager.officeNumber}</p>
+                </div>
+            </div>
+        </div>  
+    `;
+    }
+
+    const generateEngineer= function (engineer) {
+        return `
+        <div class="TBD">
+            <div class="card">
+                <div class="card-header">
+                    <h3>${engineer.name}</h3>
+                    <h4>Manager</h4>
+                </div>
+    
+                <div class="card-body">
+                    <p class="employee info"">ID: ${engineer.id}</p>
+                    <p class="employee info"">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 </div>
             </div>
         </div>  
@@ -25,7 +43,7 @@ function generateTeamCards(team){
     const html = []
 
     html.push(team.filter(item => item.getRole()=== 'Manager').map(manager => generateManager(manager)))
-
+    html.push(team.filter(item => item.getRole()=== 'Engineer').map(engineer => generateEngineer(engineer)))
 
     return html.join('')
     
