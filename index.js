@@ -144,26 +144,4 @@ const writeToFile = () => {
     })
 }
 
-// Alt versions of writeFile Below
-
-// function writeFile() { //TODO Create the output directory if the output path doesn't exist
-//     if(!fs.existsSync(OUTPUT_DIR)) {
-//         fs.mkdirSync(OUTPUT_DIR) 
-//     }
-//     fs.writeFileSync(outputPath, render(teamMembers),'utf-8')
-//team members has to hold all the answers
-
-
-
-
-    // const generateTeamProfile = generateTeamProfile(answers)
-  
-    // fs.writeFile('./dist/index.html', createIndexHTML 
-    // ,(error) => { //handles errors
-    //   if (error) throw new Error("Something went wrong", error)
-    // }
-    // )
-//   }
-
-
 start()
