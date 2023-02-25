@@ -34,16 +34,36 @@ function generateTeamCards(team){
                 <div class="card-body">
                     <p class="employee info"">ID: ${engineer.id}</p>
                     <p class="employee info"">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                    <p class="employee info"">Office Number: ${engineer.github}</p>
                 </div>
             </div>
         </div>  
     `;
     }
 
+    const generateIntern= function (intern) {
+        return `
+        <div class="TBD">
+            <div class="card">
+                <div class="card-header">
+                    <h3>${intern.name}</h3>
+                    <h4>Manager</h4>
+                </div>
+    
+                <div class="card-body">
+                    <p class="employee info"">ID: ${intern.id}</p>
+                    <p class="employee info"">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                    <p class="employee info"">Office Number: ${intern.school}</p>
+                </div>
+            </div>
+        </div>  
+    `;
+    }
     const html = []
 
     html.push(team.filter(item => item.getRole()=== 'Manager').map(manager => generateManager(manager)))
     html.push(team.filter(item => item.getRole()=== 'Engineer').map(engineer => generateEngineer(engineer)))
+    html.push(team.filter(item => item.getRole()=== 'Intern').map(intern => generateIntern(intern)))
 
     return html.join('')
     
