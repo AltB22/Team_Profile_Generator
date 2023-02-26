@@ -1,21 +1,19 @@
 //Below generates card for "Manager"
-
-
-function generateTeamCards(team){
+const generateTeamCards = team => {
     
     const generateManager = function (manager) {
         return `
         <div class="TBD">
             <div class="card">
                 <div class="card-header">
-                    <h3>${manager.name}</h3>
+                    <h3>${manager.getName()}</h3>
                     <h4>Manager</h4>
                 </div>
     
                 <div class="card-body">
-                    <p class="employee info"">ID: ${manager.id}</p>
-                    <p class="employee info"">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                    <p class="employee info"">Office Number: ${manager.officeNumber}</p>
+                    <p class="employee info">ID: ${manager.id}</p>
+                    <p class="employee info">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                    <p class="employee info">Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>
         </div>  
@@ -27,14 +25,14 @@ function generateTeamCards(team){
         <div class="TBD">
             <div class="card">
                 <div class="card-header">
-                    <h3>${engineer.name}</h3>
-                    <h4>Manager</h4>
+                    <h3>${engineer.getName()}</h3>
+                    <h4>Engineer</h4>
                 </div>
     
                 <div class="card-body">
-                    <p class="employee info"">ID: ${engineer.id}</p>
-                    <p class="employee info"">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p class="employee info"">Office Number: ${engineer.github}</p>
+                    <p class="employee info">ID: ${engineer.id}</p>
+                    <p class="employee info">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                    <p class="employee info">Office Number: ${engineer.getGitHub()}</p>
                 </div>
             </div>
         </div>  
@@ -47,29 +45,38 @@ function generateTeamCards(team){
             <div class="card">
                 <div class="card-header">
                     <h3>${intern.name}</h3>
-                    <h4>Manager</h4>
+                    <h4>Engineer</h4>
                 </div>
     
                 <div class="card-body">
-                    <p class="employee info"">ID: ${intern.id}</p>
-                    <p class="employee info"">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                    <p class="employee info"">Office Number: ${intern.school}</p>
+                    <p class="employee info">ID: ${intern.id}</p>
+                    <p class="employee info">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                    <p class="employee info">Office Number: ${intern.school}</p>
                 </div>
             </div>
         </div>  
     `;
-    }
-    const html = []
+    };
 
-    html.push(team.filter(item => item.getRole()=== 'Manager').map(manager => generateManager(manager)))
-    html.push(team.filter(item => item.getRole()=== 'Engineer').map(engineer => generateEngineer(engineer)))
-    html.push(team.filter(item => item.getRole()=== 'Intern').map(intern => generateIntern(intern)))
+    const html = [];
+
+    html.push(team
+        .filter(item => item.getRole()=== 'Manager')
+        .map(manager => generateManager(manager))
+        );
+    html.push(team.filter(item => item.getRole()=== 'Engineer')
+        .map(engineer => generateEngineer(engineer))
+        );
+    html.push(team.filter(item => item.getRole()=== 'Intern')
+        .map(intern => generateIntern(intern))
+        );
 
     return html.join('')
     
 }
 
 module.exports = (teamArray) => {
+
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -95,4 +102,5 @@ module.exports = (teamArray) => {
     
 </body>
 </html>
-`}
+`;
+};
