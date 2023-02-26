@@ -32,7 +32,7 @@ const generateTeamCards = team => {
                 <div class="card-body">
                     <p class="employee info">ID: ${engineer.id}</p>
                     <p class="employee info">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p class="employee info">Office Number: ${engineer.getGitHub()}</p>
+                    <p class="employee info">GitHub Profile: ${engineer.getGitHub()}</p>
                 </div>
             </div>
         </div>  
@@ -51,7 +51,7 @@ const generateTeamCards = team => {
                 <div class="card-body">
                     <p class="employee info">ID: ${intern.id}</p>
                     <p class="employee info">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                    <p class="employee info">Office Number: ${intern.school}</p>
+                    <p class="employee info">School: ${intern.school}</p>
                 </div>
             </div>
         </div>  
@@ -85,6 +85,7 @@ module.exports = (team) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
