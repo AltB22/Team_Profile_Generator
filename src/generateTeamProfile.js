@@ -3,8 +3,8 @@ const generateTeamCards = team => {
     
     const generateManager = function (manager) {
         return `
-        <div class="TBD">
-            <div class="card">
+        <div class="col-4 mt-4">
+            <div class="card" h-100>
                 <div class="card-header">
                     <h2>${manager.name}</h2>
                     <h3>Manager</h3>
@@ -16,14 +16,13 @@ const generateTeamCards = team => {
                     <p class="employee info">Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>
-        </div>  
-    `;
+        </div>`;
     }
 
     const generateEngineer= function (engineer) {
         return `
-        <div class="TBD">
-            <div class="card">
+        <div class="col-4 mt-4">
+            <div class="card" h-100>
                 <div class="card-header">
                     <h2>${engineer.name}</h2>
                     <h3>Engineer</h3>
@@ -35,14 +34,13 @@ const generateTeamCards = team => {
                     <p class="employee info">GitHub Profile: ${engineer.getGitHub()}</p>
                 </div>
             </div>
-        </div>  
-    `;
+        </div>`;
     }
 
     const generateIntern= function (intern) {
         return `
-        <div class="TBD">
-            <div class="card">
+        <div class="col-4 mt-4">
+            <div class="card" h-100>
                 <div class="card-header">
                     <h2>${intern.name}</h2>
                     <h3>Intern</h3>
@@ -54,8 +52,7 @@ const generateTeamCards = team => {
                     <p class="employee info">School: ${intern.school}</p>
                 </div>
             </div>
-        </div>  
-    `;
+        </div>`;
     };
 
     const html = [];
@@ -64,10 +61,12 @@ const generateTeamCards = team => {
         .filter(item => item.getRole()=== 'Manager')
         .map(manager => generateManager(manager))
         );
-    html.push(team.filter(item => item.getRole()=== 'Engineer')
+    html.push(team
+        .filter(item => item.getRole()=== 'Engineer')
         .map(engineer => generateEngineer(engineer))
         );
-    html.push(team.filter(item => item.getRole()=== 'Intern')
+    html.push(team
+        .filter(item => item.getRole()=== 'Intern')
         .map(intern => generateIntern(intern))
         );
 
@@ -85,13 +84,16 @@ module.exports = (team) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.ess">
+    <link href="https://fonts.googleapis.com/ess?family-Public+Sans:3001,300,500&display-swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <span>My Team Profile</span>
+        <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Team Profile</span>
+        </nav>
     </header>
     <main>
         <div class="container">
@@ -102,6 +104,7 @@ module.exports = (team) => {
     </main>
     
 </body>
-</html>
-`;
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</html>`;
 };
