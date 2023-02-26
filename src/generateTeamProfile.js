@@ -64,13 +64,15 @@ const generateTeamCards = team => {
     html.push(team
         .filter(item => item.getRole()=== 'Engineer')
         .map(engineer => generateEngineer(engineer))
+        .join('')
         );
     html.push(team
         .filter(item => item.getRole()=== 'Intern')
         .map(intern => generateIntern(intern))
+        .join('')
         );
 
-    return html.join('')
+    return html.join("")
     
 }
 
