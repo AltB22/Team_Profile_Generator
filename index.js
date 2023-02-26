@@ -117,14 +117,14 @@ function addIntern(){
         },
         {
           type: "input",
-          name: "newInternGitHub",
-          message: "What is the new Intern's GitHub username?",
+          name: "newInternSchool",
+          message: "What is the new Intern's school?",
         },
 
     ]).then(internData => {
        console.log(internData)
         const newIntern = new Intern (
-            internData.name, internData.newInternEmployeeID, internData.newInternEmail, internData.newInternGitHub
+            internData.name, internData.newInternEmployeeID, internData.newInternEmail, internData.newInternSchool
         )
         // console.log(newIntern)
         team.push(newIntern)

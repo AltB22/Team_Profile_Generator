@@ -6,13 +6,13 @@ const generateTeamCards = team => {
         <div class="TBD">
             <div class="card">
                 <div class="card-header">
-                    <h3>${manager.getName()}</h3>
-                    <h4>Manager</h4>
+                    <h2>${manager.name}</h2>
+                    <h3>Manager</h3>
                 </div>
     
                 <div class="card-body">
-                    <p class="employee info">ID:${manager.getId()}</p>
-                    <p class="employee info">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
+                    <p class="employee info">ID:${manager.id}</p>
+                    <p class="employee info">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
                     <p class="employee info">Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>
@@ -25,8 +25,8 @@ const generateTeamCards = team => {
         <div class="TBD">
             <div class="card">
                 <div class="card-header">
-                    <h3>${engineer.getName()}</h3>
-                    <h4>Engineer</h4>
+                    <h2>${engineer.name}</h2>
+                    <h3>Engineer</h3>
                 </div>
     
                 <div class="card-body">
@@ -44,8 +44,8 @@ const generateTeamCards = team => {
         <div class="TBD">
             <div class="card">
                 <div class="card-header">
-                    <h3>${intern.name}</h3>
-                    <h4>Engineer</h4>
+                    <h2>${intern.name}</h2>
+                    <h3>Engineer</h3>
                 </div>
     
                 <div class="card-body">
