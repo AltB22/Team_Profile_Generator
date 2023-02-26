@@ -1,16 +1,15 @@
 const inquirer = require('inquirer');//const to require installation of inquirer
 const fs = require('fs');//indicating interaction with the file system
-const generateTeamProfile = require('./src/generateTeamProfile');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
+const generateTeamProfile = require('./src/generateTeamProfile');//requires generateTeamProfile.js
+const Manager = require('./lib/Manager');//requires Manager Class(from Manager.js file)
+const Engineer = require('./lib/Engineer');//requires Engineer Class(from Engineer.js file)
+const Intern = require('./lib/Intern');//requires Intern Class(from Intern.js file)
 
 
-const team =  [];
+const team =  [];//Empty array to capture the team the gets created
 
-function start(){
+function start(){//starting series of prompt questions as objects in an array
     inquirer.prompt([
-       
         {
             type: "input",
             name: "employeeName",
@@ -33,7 +32,7 @@ function start(){
         },      
 
         ])
-        .then(answer => {
+        .then(answer => {//Promise using arrow function which allows "answer" to be recognized as data from above sequence
             const newManager = new Manager(answer.employeeName, answer.employeeID, answer.emailAddress, answer.officeNumber)
      
             team.push(newManager)
@@ -41,14 +40,14 @@ function start(){
     })
 }
 
-function menu(){
+function menu(){//list type of prompt to indicate employee type to be added or finish and generate profile
     inquirer.prompt(  {
         type: "list",
         name: "employeeType",
         message: "Select the employee type you would like to add or select finish building team.",
         choices: [ 'Engineer', 'Intern', 'Finish Building Team'] 
     }).then((answer)=>{
-        switch(answer.employeeType){
+        switch(answer.employeeType){//switch/case here replaced an older if else if statement to qualify the which function to call next.
         
             case "Engineer":
                 addEngineer();
@@ -65,7 +64,7 @@ function menu(){
 
 
 
-function addEngineer(){
+function addEngineer(){//Engineer question prompts
     inquirer.prompt([
         {
           type: "input",//could be list of types of employees
@@ -98,7 +97,7 @@ function addEngineer(){
     })
 }
 
-function addIntern(){
+function addIntern(){//Intern question prompts
     inquirer.prompt([
         {
           type: "input",//could be list of types of employees
@@ -132,7 +131,7 @@ function addIntern(){
     })
 }
 
-const writeToFile = () => {
+const writeToFile = () => {//writes to file to generate the new index.html profile content.  Team contains the data.
     fs.writeFile('./dist/index.html', generateTeamProfile(team), err => {
         if(err){
             console.log(err);
