@@ -16,9 +16,11 @@
 
   [Questions](#questions)
 
-  ## Screenshot of Deployed Application & Video Demo
+  ## Screenshot of Deployed Application
 
-  ![Image of Page Generate by app with Header "My Team Profile" and a number of cards below containing names, roles, and contact info](./assets/Team_Profile_Generator.png)
+  ![Image of Page Generate by app with Header "My Team Profile" and a number of cards below containing names, roles, and contact info](./assets/Team_Proflie_Generator.png)
+
+  ## Link to Video Demo
 
   https://bootcampspot.instructuremedia.com/embed/d748f2a4-3e24-4e87-bd93-c929b3f7493c
 
