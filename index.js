@@ -34,7 +34,7 @@ function start(){
 
         ])
         .then(answer => {
-            const newManager = new Manager(answer.employeeName, answer.employeeId)
+            const newManager = new Manager(answer.employeeName, answer.employeeID, answer.emailAddress, answer.officeNumber)
      
             team.push(newManager)
             menu()
@@ -74,24 +74,23 @@ function addEngineer(){
         },
         {
           type: "input",
-          name: "NewEngineerEmployeeID",
+          name: "newEngineerEmployeeID",
           message: "What will the new Engineer's employee ID be?",
         },
         {
           type: "input",
-          name: "NewEngineerEmail",
+          name: "newEngineerEmail",
           message: "What will the new Engineer's email address be?",
         },
         {
           type: "input",
-          name: "NewEngineerGitHub",
+          name: "newEngineerGitHub",
           message: "What is the new Engineer's GitHub username?",
         },
 
     ]).then(engineerData => {
         // console.log(engineerData)
-        const newEngineer = new Engineer(
-            engineerData.name
+        const newEngineer = new Engineer(engineerData.name, engineerData.newEngineerEmployeeID, engineerData.newEngineerEmail, engineerData.newEngineerGitHub
         )
         // console.log(newEngineer)
         team.push(newEngineer)
@@ -108,24 +107,24 @@ function addIntern(){
         },
         {
           type: "input",
-          name: "NewInternEmployeeID",
+          name: "newInternEmployeeID",
           message: "What will the new Intern's employee ID be?",
         },
         {
           type: "input",
-          name: "NewInternEmail",
+          name: "newInternEmail",
           message: "What will the new Intern's email address be?",
         },
         {
           type: "input",
-          name: "NewInternGitHub",
+          name: "newInternGitHub",
           message: "What is the new Intern's GitHub username?",
         },
 
     ]).then(internData => {
        console.log(internData)
         const newIntern = new Intern (
-            internData.name
+            internData.name, internData.newInternEmployeeID, internData.newInternEmail, internData.newInternGitHub
         )
         // console.log(newIntern)
         team.push(newIntern)

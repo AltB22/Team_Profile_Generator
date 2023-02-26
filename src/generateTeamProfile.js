@@ -11,8 +11,8 @@ const generateTeamCards = team => {
                 </div>
     
                 <div class="card-body">
-                    <p class="employee info">ID: ${manager.id}</p>
-                    <p class="employee info">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                    <p class="employee info">ID:${manager.getId()}</p>
+                    <p class="employee info">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
                     <p class="employee info">Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>
@@ -75,7 +75,7 @@ const generateTeamCards = team => {
     
 }
 
-module.exports = (teamArray) => {
+module.exports = (team) => {
 
     return `
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ module.exports = (teamArray) => {
     <main>
         <div class="container">
             <div class="row jusfify-content-center" id="team-cards">
-                ${generateTeamCards(teamArray)}
+                ${generateTeamCards(team)}
             </div>
         </div>
     </main>
