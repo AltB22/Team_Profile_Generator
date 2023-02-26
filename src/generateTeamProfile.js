@@ -12,7 +12,7 @@ const generateTeamCards = team => {
     
                 <div class="card-body">
                     <p class="employee info">ID:${manager.id}</p>
-                    <p class="employee info">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                    <p class="employee info">Email: <a href="mailto:${manager.email}"target="_blank">${manager.email}</a></p>
                     <p class="employee info">Office Number: ${manager.getOfficeNumber()}</p>
                 </div>
             </div>
@@ -30,8 +30,8 @@ const generateTeamCards = team => {
     
                 <div class="card-body">
                     <p class="employee info">ID: ${engineer.id}</p>
-                    <p class="employee info">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p class="employee info">GitHub Profile: ${engineer.getGitHub()}</p>
+                    <p class="employee info">Email: <a href="mailto:${engineer.email}"target="_blank">${engineer.email}</a></p>
+                    <p class="employee info">GitHub Profile: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
                 </div>
             </div>
         </div>`;
@@ -48,7 +48,7 @@ const generateTeamCards = team => {
     
                 <div class="card-body">
                     <p class="employee info">ID: ${intern.id}</p>
-                    <p class="employee info">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                    <p class="employee info">Email: <a href="mailto:${intern.email}"target="_blank">${intern.email}</a></p>
                     <p class="employee info">School: ${intern.school}</p>
                 </div>
             </div>

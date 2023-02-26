@@ -121,11 +121,11 @@ function addIntern(){//Intern question prompts
         },
 
     ]).then(internData => {
-       console.log(internData)
+     
         const newIntern = new Intern (
             internData.name, internData.newInternEmployeeID, internData.newInternEmail, internData.newInternSchool
         )
-        // console.log(newIntern)
+    
         team.push(newIntern)
         menu()
     })
