@@ -1,7 +1,6 @@
 
 header {
     background-color: rgb(9, 43, 78);
-    /* font-size: 70px; */
     color: white;
     text-align: center;
     padding: 25px;
@@ -9,8 +8,6 @@ header {
 
 .container {
     display: inline;
-    /* justify-content: space-evenly; */
-    /* justify-items: center; */
 }
 
 .card {

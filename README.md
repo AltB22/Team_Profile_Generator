@@ -18,8 +18,8 @@
 
   ## Screenshot of Deployed Application
 
-  ![Displays Time Blocks from 9am to 5pm color coded for past, present and future with a blue save button to the right of each hour block.](./Assets/Work_Day_Planner.png)
-
+  ![Image of Page Generate by app with Header "My Team Profile" and a number of cards below containing names, roles, and contact info](./assets/Team_Profile_Generator.png)
+  
   ## Installation
   - In order to run the app, installation of node.js version 16 or higher is required on the user's device.  In addition, inquirer.js (https://www.npmjs.com/package/inquirer/v/8.2.4) is required to be installed in the parent directory.  Finally, testing features are built in which require jest to be installed also.  To install the proper packages using the integraged command line interface in VS Code, simply run npm init -y followed by npm install (or just npm i).
   ## Usage

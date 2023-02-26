@@ -1,7 +1,7 @@
-//Below generates card for "Manager"
+//Below generates the various employees cards using template literals to create HTML content
 const generateTeamCards = team => {
     
-    const generateManager = function (manager) {
+    const generateManager = function (manager) {//Creates manager card
         return `
         <div class="col-4 mt-4">
             <div class="card" h-100>
@@ -19,7 +19,7 @@ const generateTeamCards = team => {
         </div>`;
     }
 
-    const generateEngineer= function (engineer) {
+    const generateEngineer= function (engineer) {//Creates engineer card
         return `
         <div class="col-4 mt-4">
             <div class="card" h-100>
@@ -37,7 +37,7 @@ const generateTeamCards = team => {
         </div>`;
     }
 
-    const generateIntern= function (intern) {
+    const generateIntern= function (intern) {//Creates intern card
         return `
         <div class="col-4 mt-4">
             <div class="card" h-100>
@@ -55,7 +55,7 @@ const generateTeamCards = team => {
         </div>`;
     };
 
-    const html = [];
+    const html = [];//empty array to capture the pushed items from above into
 
     html.push(team
         .filter(item => item.getRole()=== 'Manager')
@@ -72,11 +72,11 @@ const generateTeamCards = team => {
         .join('')
         );
 
-    return html.join("")
+    return html.join("")//joins the array into a string
     
 }
 
-module.exports = (team) => {
+module.exports = (team) => { //exports the team array as one join HTML content
 
     return `
 <!DOCTYPE html>
