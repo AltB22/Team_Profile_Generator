@@ -45,7 +45,7 @@ const generateTeamCards = team => {
             <div class="card">
                 <div class="card-header">
                     <h2>${intern.name}</h2>
-                    <h3>Engineer</h3>
+                    <h3>Intern</h3>
                 </div>
     
                 <div class="card-body">
