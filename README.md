@@ -16,10 +16,12 @@
 
   [Questions](#questions)
 
-  ## Screenshot of Deployed Application
+  ## Screenshot of Deployed Application & Video Demo
 
   ![Image of Page Generate by app with Header "My Team Profile" and a number of cards below containing names, roles, and contact info](./assets/Team_Profile_Generator.png)
-  
+
+  https://bootcampspot.instructuremedia.com/embed/d748f2a4-3e24-4e87-bd93-c929b3f7493c
+
   ## Installation
   - In order to run the app, installation of node.js version 16 or higher is required on the user's device.  In addition, inquirer.js (https://www.npmjs.com/package/inquirer/v/8.2.4) is required to be installed in the parent directory.  Finally, testing features are built in which require jest to be installed also.  To install the proper packages using the integraged command line interface in VS Code, simply run npm init -y followed by npm install (or just npm i).
   ## Usage
