@@ -1,4 +1,4 @@
-# Command Line README Generator    
+# Team Prfoile Generator   
   [![License site](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit)
 
   ## Description
@@ -26,6 +26,7 @@
 
   ## Installation
   - In order to run the app, installation of node.js version 16 or higher is required on the user's device.  In addition, inquirer.js (https://www.npmjs.com/package/inquirer/v/8.2.4) is required to be installed in the parent directory.  Finally, testing features are built in which require jest to be installed also.  To install the proper packages using the integraged command line interface in VS Code, simply run npm init -y followed by npm install (or just npm i).
+  
   ## Usage
   - This application saves time for development team managers who want to quickly and easily generate a profile page for their team which includes information about themselves, their engineers, and their interns.  The app serves as a template and prompts he user to answer a series of questions that are required for output.  Access is via the command line terminal interface.  Please see link for video on proper installation and usage of the application.  
 
