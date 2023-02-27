@@ -5,6 +5,11 @@ describe('testing employee class', () => {
 
     test('does the manager office # pass into the new obj?', ()=>{
         expect(manager.officeNumber).toBe('d')
+        expect(manager.getOfficeNumber()).toBe('d')
+ 
+    })
+    test('does the manager office # pass into the new obj?', ()=>{
+        expect(manager.getRole()).toBe('Manager')
  
     })
 });
