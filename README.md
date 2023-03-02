@@ -38,7 +38,7 @@
   - Please visit my GitHub profile for further information about his project (https://github.com/AltB22)
   - Please email massie.w@gmail.com with additional quesitons.
   ## License
-    This application is covered under the MIT license
+  - This application is covered under the MIT license
 
   [![License site](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit)
 

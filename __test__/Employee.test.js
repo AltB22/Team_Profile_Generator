@@ -1,4 +1,4 @@
-//
+//Qualifies data for Employee Class
 
 const Employee = require('../lib/Employee');
 
